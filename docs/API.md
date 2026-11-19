@@ -29,5 +29,11 @@ API-created lines use the same registry and history without creating a duplicate
 Usage Link=false does not itself prove procurement-demand exclusion. Keep Budget Demand Validated false until
 the planning test passes. No parallel native Item-type project consumption is allowed for these shipments.
 
+On a Sales Order line marked VPM Project Material, completing project, task, item and variant automatically
+selects the single active VPM budget with the same values. The budget external ID is copied to VPM Budget Id,
+and VPM Source Line Id is generated once and then remains stable. A missing or non-unique active budget blocks
+validation instead of linking the order to an arbitrary budget. A valid ID supplied by an integration is
+preserved. Return Orders keep explicit identifiers so that they can reference the original outbound source.
+
 Use normal BC OAuth and API permissions. No credentials are packaged.
 Examples are in samples/material-budget.http.

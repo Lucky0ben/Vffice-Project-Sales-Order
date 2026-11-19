@@ -1,6 +1,6 @@
 # Vffice Project Materials
 
-Business Central AL source package. Publisher Vffice. Version 1.1.0.0. Prepared 19 November 2026.
+Business Central AL source package. Publisher Vffice. Version 1.2.0.0. Prepared 19 November 2026.
 
 ## Build status
 **Compiled against BC 28.5 target symbols and deployed to the ProductionDemo sandbox; not production validated.**
@@ -13,6 +13,8 @@ Open Vffice.ProjectMaterials.code-workspace; follow docs/BUILD_AND_DEPLOY.md.
   creates/updates a real standard Job Planning Line, Type Item and Line Type Budget.
 - Read-only standard planning-line API and project material cost API.
 - Sales Line fields and installer for existing native Dataverse integration field mappings.
+  Sales Orders automatically resolve the budget ID from the VPM project, task, item and variant and generate
+  a stable source-line ID; ambiguous or missing active budgets are rejected.
   No custom sales-order REST importer, Power Automate order flow or replacement synchronization scheduler.
 - Project-material posting validation, durable shipment/return links and controlled zero-dollar invoice action.
 - Recurring cost reconciliation including later supplier invoice and assigned item-charge changes.

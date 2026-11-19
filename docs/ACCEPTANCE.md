@@ -12,6 +12,9 @@ AL unit test codeunit71150 can run using the organization's BC test runner. Unit
    Test every used planning route. Keep Budget Demand Validated false until this passes.
 3. Sync ordinary/project orders using existing Dataverse mappings/jobs. Retry creates no duplicate order/line.
    Verify all five custom fields on final Sales Line records, not only intermediate CRM buffers.
+   On a VPM Sales Order line, select a project, task and item with one active matching budget: Budget Id must
+   equal that budget external ID and Source Line Id must be generated and remain unchanged after quantity edits.
+   Prove that no match and duplicate active matches are rejected. Prove a Return Order retains explicit IDs.
 4. Normal and promotional zero-price direct sales create no custom cost allocation.
 5. Project shipment60 of100: technical invoice60, one stock issue, zero material revenue.
    Resolve all tracking entries; preview must leave no persistent capture. Dry mode posts nothing.
