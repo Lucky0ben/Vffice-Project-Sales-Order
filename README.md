@@ -1,11 +1,11 @@
 # Vffice Project Materials
 
-Business Central AL source package. Publisher Vffice. Version 1.0.0.0. Prepared 19 November 2026.
+Business Central AL source package. Publisher Vffice. Version 1.1.0.0. Prepared 19 November 2026.
 
 ## Build status
-**Source build candidate: not compiled, not deployed, not production validated.**
-No AL compiler, target BC symbols, sandbox credentials or Dataverse schema are available here.
-No .app binary is supplied. Default target: BC 28 / runtime 17. Confirm the actual target and object ranges.
+**Compiled against BC 28.5 target symbols and deployed to the ProductionDemo sandbox; not production validated.**
+No .app binary is supplied in source control. Default target: BC 28 / runtime 17. Confirm the actual target
+and object ranges before another deployment.
 Open Vffice.ProjectMaterials.code-workspace; follow docs/BUILD_AND_DEPLOY.md.
 
 ## Included

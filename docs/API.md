@@ -21,7 +21,11 @@ Do not normally use wildcard ETags. Project/task/item/variant/unit and external 
 Use a new budget identity for substitutions. Set inactive with a new revision to retire the line; native
 planning quantity becomes zero, history remains. DELETE is prohibited. Actual costs are never rewritten.
 
-Keep managed planning lines under integration ownership. Manual edits are not a supported budget-revision path.
+Item/Budget project planning lines created manually are registered automatically as VPM budgets when
+Budget Demand Validated is true. VPM generates their external identity, sets Usage Link=false and creates
+revision1. Later quantity, unit-cost, planning-date or description edits create the next VPM revision.
+Managed identity fields and line numbers are immutable, and managed planning lines cannot be deleted.
+API-created lines use the same registry and history without creating a duplicate planning line.
 Usage Link=false does not itself prove procurement-demand exclusion. Keep Budget Demand Validated false until
 the planning test passes. No parallel native Item-type project consumption is allowed for these shipments.
 

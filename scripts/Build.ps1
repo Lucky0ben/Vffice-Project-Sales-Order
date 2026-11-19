@@ -18,10 +18,10 @@ function Compile([string]$project, [string]$output) {
   if ($LASTEXITCODE -ne 0) { throw "AL compiler failed ($LASTEXITCODE)." }
   if (!(Test-Path $output)) { throw 'Compiler returned without creating the package.' }
 }
-$app = Join-Path $artifacts 'Vffice_ProjectMaterials_1.0.0.0.app'
+$app = Join-Path $artifacts 'Vffice_ProjectMaterials_1.1.0.0.app'
 Compile (Join-Path $root 'app') $app
 if ($IncludeTests) {
   Copy-Item $app $SymbolsPath -Force
-  Compile (Join-Path $root 'tests') (Join-Path $artifacts 'Vffice_ProjectMaterialsTests_1.0.0.0.app')
+  Compile (Join-Path $root 'tests') (Join-Path $artifacts 'Vffice_ProjectMaterialsTests_1.1.0.0.app')
 }
 Get-FileHash (Join-Path $artifacts '*.app') -Algorithm SHA256

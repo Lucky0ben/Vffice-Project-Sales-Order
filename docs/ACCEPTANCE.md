@@ -5,6 +5,9 @@ AL unit test codeunit71150 can run using the organization's BC test runner. Unit
 
 1. Budget POST1000 creates exactly one Item/Budget planning line and revision1. Duplicate POST fails.
    Stale ETag/lower revision PATCH fails. Revision2 updates the same line and records history.
+   A manually inserted Item/Budget planning line creates exactly one VPM budget with a generated external ID,
+   Usage Link=false and revision1. A manual quantity/cost/date/description change creates revision2 without a
+   second planning line. Identity changes, renumbering and deletion are blocked.
 2. Budget1000, confirmed order100, no stock: required supply must be100, not1000 or1100.
    Test every used planning route. Keep Budget Demand Validated false until this passes.
 3. Sync ordinary/project orders using existing Dataverse mappings/jobs. Retry creates no duplicate order/line.

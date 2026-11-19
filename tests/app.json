@@ -2,7 +2,7 @@
   "id": "57317eb2-d56c-4e63-91b9-d5c1294396e2",
   "name": "Vffice Project Materials Tests",
   "publisher": "Vffice",
-  "version": "1.0.0.0",
+  "version": "1.1.0.0",
   "brief": "Project material budgets and actual cost transfer",
   "platform": "28.0.0.0",
   "application": "28.0.0.0",
@@ -27,7 +27,7 @@
       "id": "a47f31c6-2fb6-4662-a290-54ac7fd5dd43",
       "name": "Vffice Project Materials",
       "publisher": "Vffice",
-      "version": "1.0.0.0"
+      "version": "1.1.0.0"
     }
   ]
 }

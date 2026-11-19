@@ -19,7 +19,7 @@ This is not a claim that all architecture-annex requirements are implemented.
 |Audit|Item/value/project entry, transfer document, amounts and accounts|No normalized G/L posting-link table; use document drill-down|
 |Recovery|Per-source rollback, visible errors, retry on next sweep|Full sweep prioritizes correctness over high-volume optimization|
 |Tests|Cost math/sign/retry/rounding and missing budget identity|End-to-end financial and injected-failure tests need BC sandbox|
-|Build|Workspace, manifest, launch, build script|Not compiled here; no symbols/compiler or .app binary|
+|Build|Workspace, manifest, launch, build script; compiled against BC28.5 and sandbox-deployed|No production validation or approved release binary in source control|
 
 Initial costing scope: purchased FIFO, Average and Specific. Additional reporting currency, Standard costing,
 production/assembly and site-held inventory are rejected or excluded. Finance must resolve errors before WIP close.
