@@ -27,7 +27,17 @@ codeunit 71003 "VPM Cost Worker"
                     Source.Init(); Source."Item Entry No." := ILE."Entry No.";
                     Source."Project No." := Link."Project No."; Source."Task No." := Link."Task No.";
                     Source."Budget Id" := Link."Budget Id"; Source."Document No." := Link."Document No.";
+                    Source."Source Line Id" := Link."Source Line Id";
                     Source.Status := 'Pending'; Source.Insert(true);
+                end else begin
+                    if not IsNullGuid(Source."Source Line Id") and
+                       (Source."Source Line Id" <> Link."Source Line Id")
+                    then
+                        Error('Item entry %1 is linked to conflicting VPM source line identifiers.', ILE."Entry No.");
+                    if IsNullGuid(Source."Source Line Id") and not IsNullGuid(Link."Source Line Id") then begin
+                        Source."Source Line Id" := Link."Source Line Id";
+                        Source.Modify();
+                    end;
                 end;
             until ILE.Next() = 0;
         until Link.Next() = 0;

@@ -16,6 +16,7 @@ page 71002 "VPM Transfers"
         field("Target Account"; Rec."Target Account") { ApplicationArea = All; }
         field("Dimension Set ID"; Rec."Dimension Set ID") { ApplicationArea = All; }
         field("Project Entry No."; Rec."Project Entry No.") { ApplicationArea = All; }
+        field("Source Line Id"; Rec."Source Line Id") { ApplicationArea = All; ToolTip = 'Specifies the stable VPM source sales-line identifier for this transfer.'; }
     } } }
 
 

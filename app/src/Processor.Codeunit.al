@@ -57,6 +57,7 @@ codeunit 71004 "VPM Process Source"
         Setup.TestField("Sandbox Validated", true);
         Setup.TestField("Target Account"); Setup.TestField("Source Account");
         Setup.TestField("Journal Template"); Setup.TestField("Journal Batch"); Setup.TestField("Posting Date");
+        Setup.TestField("Project Journal Template"); Setup.TestField("Project Journal Batch");
         if Setup."Target Account" = Setup."Source Account" then Error('Use distinct source and project expense accounts.');
         Balance.LockTable();
         VE.FindSet();

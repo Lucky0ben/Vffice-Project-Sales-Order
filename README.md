@@ -1,6 +1,6 @@
 # Vffice Project Materials
 
-Business Central AL source package. Publisher Vffice. Version 1.3.0.0. Prepared 19 November 2026.
+Business Central AL source package. Publisher Vffice. Version 1.4.0.0. Prepared 19 November 2026.
 
 ## Build status
 **Compiled against BC 28.5 target symbols and deployed to the ProductionDemo sandbox; not production validated.**
@@ -20,7 +20,8 @@ Open Vffice.ProjectMaterials.code-workspace; follow docs/BUILD_AND_DEPLOY.md.
   The cost worker is invoked after a successful Sales Order posting, including invoice-only posting; later
   supplier-cost changes remain covered by the recurring reconciliation worker.
 - Recurring cost reconciliation including later supplier invoice and assigned item-charge changes.
-- Actual-cost delta calculation, conservative G/L evidence resolver and balanced project journal.
+- Actual-cost delta calculation, conservative G/L evidence resolver, balanced G/L transfer and a linked
+  Project Journal usage entry with item/value/budget/source identifiers visible on Project Ledger Entries.
 - Setup/monitoring/history pages, permissions, AL unit tests, build script, API samples and acceptance guide.
 
 ## Release boundaries

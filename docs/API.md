@@ -35,5 +35,9 @@ and VPM Source Line Id is generated once and then remains stable. A missing or n
 validation instead of linking the order to an arbitrary budget. A valid ID supplied by an integration is
 preserved. Return Orders keep explicit identifiers so that they can reference the original outbound source.
 
+Each posted VPM cost delta creates a linked Project Ledger Entry. Project Ledger Entries expose the originating
+item entry, value entry, budget ID, source-line ID and posted shipment/receipt document. The cost API also
+returns sourceLineId.
+
 Use normal BC OAuth and API permissions. No credentials are packaged.
 Examples are in samples/material-budget.http.

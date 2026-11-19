@@ -12,8 +12,9 @@
 6. Publish only the application to the sandbox using AL publish/F5. Compile and publish tests separately.
 7. Assign VPM ADMIN plus standard BC permissions for sales, projects and journal posting.
    The extension does not grant direct writes to standard financial ledger tables.
-8. Open VPM Setup. Create a dedicated empty general journal template/batch, distinct source and target expense
-   accounts and an authorized Posting Date. Do not allow other users/jobs to share the batch.
+8. Open VPM Setup. Create a dedicated empty general journal template/batch and a dedicated empty project
+   journal template/batch. Select both pairs, distinct source and target expense accounts, and an authorized
+   Posting Date. Do not allow other users/jobs to share either batch.
 9. Keep Posting Enabled false. Prove budget demand isolation before setting Budget Demand Validated.
    This acknowledgment is not an implementation of demand exclusion.
 10. Configure the existing native Dataverse mapping and synchronization job queues per DATAVERSE_MAPPING.md.

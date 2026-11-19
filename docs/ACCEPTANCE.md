@@ -22,15 +22,18 @@ AL unit test codeunit71150 can run using the organization's BC test runner. Unit
    Commit-suppressed and inventory pick/put-away posting must defer the worker without losing the source link.
    Resolve all tracking entries; dry mode posts nothing.
 6. FIFO receipt100 @20: project60, direct20, stock20. Project cost1200.
-   Supplier invoice23, standard adjustment and inventory G/L: project delta180, direct60, stock60.
+   Supplier invoice23, standard adjustment and inventory G/L: project delta180, direct60, stock60. Each VPM
+   delta creates one balanced G/L transfer and exactly one Project Ledger Entry posted from the dedicated
+   Project Journal batch. Its G/L ledger-entry link, item entry, value entry, budget ID, source-line ID and
+   shipment document must match the VPM Transfer record.
 7. Assigned freight200: project delta120, resulting1500. Unassigned G/L freight does not transfer.
 8. Exact-cost return10 @25: project delta-250. Later cost changes reconcile both issue and return once.
 9. Partial supplier/technical invoices, late zero-quantity costs and deleted order remain reconcilable.
 10. Delayed inventory G/L posting leaves prior allocation intact; posting completes then source recovers.
     Aggregated G/L evidence must block, never allocate an invented ratio.
 11. Repeated and concurrent workers post one net delta. Concurrent valuation cannot lose a cost change.
-12. Inject Error after PostBatch.Run in a disposable test build: journal, project entry, register and balance
-    all roll back. Retry the normal build and prove exactly one successful transfer.
+12. Inject Error after either the G/L or Project Journal posting in a disposable test build: both journals,
+    project entry, registers and balances all roll back. Retry the normal build and prove exactly one transfer.
 13. Closed period/project and invalid dimensions block visibly. Correct only through authorized setup.
 14. Test warehouse posting, serial/lot splits, undo shipment and returns. Block any unsupported source chain.
 15. No duplicate budget/billable planning line is created by journal usage. Reconcile G/L, project and WIP.

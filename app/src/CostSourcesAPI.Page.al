@@ -10,6 +10,7 @@ page 71012 "VPM Cost Sources API"
         field(projectNumber; Rec."Project No.") { }
         field(taskNumber; Rec."Task No.") { }
         field(budgetId; Rec."Budget Id") { }
+        field(sourceLineId; Rec."Source Line Id") { }
         field(targetCostLCY; Rec."Target LCY") { }
         field(transferredCostLCY; Rec."Transferred LCY") { }
         field(status; Rec.Status) { }

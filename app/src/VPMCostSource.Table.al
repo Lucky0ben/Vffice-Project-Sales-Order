@@ -12,6 +12,7 @@ table 71004 "VPM Cost Source"
         field(7; "Last Checked"; DateTime) {  }
         field(8; "Status"; Text[100]) {  }
         field(9; "Document No."; Code[20]) {  }
+        field(10; "Source Line Id"; Guid) {  }
     }
     keys
     {

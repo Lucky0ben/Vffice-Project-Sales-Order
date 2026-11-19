@@ -11,12 +11,12 @@ This is not a claim that all architecture-annex requirements are implemented.
 |Source capture|Sales Order post-completion capture, return links and matching item-entry discovery|Preview, serial/lot, warehouse posting tests|
 |Supplier cost updates|Full-source sweep after standard valuation, including closed orders|Configure standard valuation jobs; no event-coalesced request queue in this version|
 |Resolver|Exact historical source-account evidence per value entry|Aggregated G/L, mixed dimensions and other source accounts are rejected|
-|Journal|Balanced standard posting, project-total assertion, per-value balance|Prove commit suppression/rollback with target symbols and installed subscribers|
+|Journal|Balanced G/L posting plus linked Project Journal usage, project-total assertion and per-value balance|Prove commit suppression/rollback with target symbols and installed subscribers|
 |Accounting rules|One source and target account; source dimensions preserved|No multi-component/versioned rule UI or dimension transformation|
 |Returns|Signed linked return sources after normal credit valuation|Explicit return mapping and original item application tests|
 |Corrections|No direct ledger rewriting|Automated project reassignment/reversal UI not implemented|
 |Reporting|Monitor, transfers, budget history and read APIs|Full joined budget/commitment/EAC report and operational commitment app not included|
-|Audit|Item/value/project entry, transfer document, amounts and accounts|No normalized G/L posting-link table; use document drill-down|
+|Audit|Item/value/budget/source IDs on Project Ledger Entries, linked target G/L entry and VPM transfer record|No normalized G/L posting-link table; use document drill-down|
 |Recovery|Per-source rollback, visible errors, retry on next sweep|Full sweep prioritizes correctness over high-volume optimization|
 |Tests|Cost math/sign/retry/rounding and missing budget identity|End-to-end financial and injected-failure tests need BC sandbox|
 |Build|Workspace, manifest, launch, build script; compiled against BC28.5 and sandbox-deployed|No production validation or approved release binary in source control|

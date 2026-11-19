@@ -17,6 +17,7 @@ table 71005 "VPM Transfer"
         field(12; "Dimension Set ID"; Integer) {  }
         field(13; "Created At"; DateTime) {  }
         field(14; "Project Entry No."; Integer) {  }
+        field(15; "Source Line Id"; Guid) {  }
     }
     keys
     {
