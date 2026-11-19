@@ -18,9 +18,11 @@
    This acknowledgment is not an implementation of demand exclusion.
 10. Configure the existing native Dataverse mapping and synchronization job queues per DATAVERSE_MAPPING.md.
 11. Configure standard cost adjustment and inventory cost-to-G/L jobs. Use per-entry evidence compatible with
-    the conservative resolver. Confirm actual expense account/dimensions on posted transactions.
+    the conservative resolver. Confirm actual expense account/dimensions on posted transactions. Sales Order
+    posting invokes the VPM worker immediately after a successful post.
 12. Create a recurring standard Job Queue Entry: Object Type Codeunit, Object ID71003 VPM Cost Worker,
-    initially every five minutes. It is separate from native Dataverse synchronization jobs.
+    initially every five minutes. Keep it for later supplier-cost changes; it is separate from native
+    Dataverse synchronization jobs.
 13. Enable the feature in dry mode and inspect targets/pending reasons. Execute ACCEPTANCE.md.
 14. Only after sandbox accounting and rollback validation, set Sandbox Validated and enable posting.
 

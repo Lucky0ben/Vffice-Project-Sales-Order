@@ -8,7 +8,7 @@ This is not a claim that all architecture-annex requirements are implemented.
 |Order transport|Native mapping extension fields and installer|Real Dataverse schema; buffer adapter if native route does not target Sales Line|
 |Budget demand isolation|Setup gate; Usage Link disabled|No universal planning exclusion subscriber; prove configuration or implement target-specific exclusion|
 |Technical invoice|Controlled action for shipped project-only orders|Localization, tax/output and mixed-order policies|
-|Source capture|Shipment/return links and matching item-entry discovery|Preview, serial/lot, warehouse posting tests|
+|Source capture|Sales Order post-completion capture, return links and matching item-entry discovery|Preview, serial/lot, warehouse posting tests|
 |Supplier cost updates|Full-source sweep after standard valuation, including closed orders|Configure standard valuation jobs; no event-coalesced request queue in this version|
 |Resolver|Exact historical source-account evidence per value entry|Aggregated G/L, mixed dimensions and other source accounts are rejected|
 |Journal|Balanced standard posting, project-total assertion, per-value balance|Prove commit suppression/rollback with target symbols and installed subscribers|

@@ -17,7 +17,10 @@ AL unit test codeunit71150 can run using the organization's BC test runner. Unit
    Prove that no match and duplicate active matches are rejected. Prove a Return Order retains explicit IDs.
 4. Normal and promotional zero-price direct sales create no custom cost allocation.
 5. Project shipment60 of100: technical invoice60, one stock issue, zero material revenue.
-   Resolve all tracking entries; preview must leave no persistent capture. Dry mode posts nothing.
+   The Sales Order posting invokes the VPM worker after posting succeeds. An invoice-only posting invokes it
+   again so the shipped source can reconcile. Preview must leave no persistent capture or cost adjustment.
+   Commit-suppressed and inventory pick/put-away posting must defer the worker without losing the source link.
+   Resolve all tracking entries; dry mode posts nothing.
 6. FIFO receipt100 @20: project60, direct20, stock20. Project cost1200.
    Supplier invoice23, standard adjustment and inventory G/L: project delta180, direct60, stock60.
 7. Assigned freight200: project delta120, resulting1500. Unassigned G/L freight does not transfer.
