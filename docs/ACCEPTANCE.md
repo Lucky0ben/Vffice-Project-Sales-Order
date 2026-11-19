@@ -1,0 +1,28 @@
+# Sandbox acceptance
+
+Record BC version, localization, installed apps, account setup, timestamps and resulting entry IDs.
+AL unit test codeunit71150 can run using the organization's BC test runner. Unit tests do not authorize activation.
+
+1. Budget POST1000 creates exactly one Item/Budget planning line and revision1. Duplicate POST fails.
+   Stale ETag/lower revision PATCH fails. Revision2 updates the same line and records history.
+2. Budget1000, confirmed order100, no stock: required supply must be100, not1000 or1100.
+   Test every used planning route. Keep Budget Demand Validated false until this passes.
+3. Sync ordinary/project orders using existing Dataverse mappings/jobs. Retry creates no duplicate order/line.
+   Verify all five custom fields on final Sales Line records, not only intermediate CRM buffers.
+4. Normal and promotional zero-price direct sales create no custom cost allocation.
+5. Project shipment60 of100: technical invoice60, one stock issue, zero material revenue.
+   Resolve all tracking entries; preview must leave no persistent capture. Dry mode posts nothing.
+6. FIFO receipt100 @20: project60, direct20, stock20. Project cost1200.
+   Supplier invoice23, standard adjustment and inventory G/L: project delta180, direct60, stock60.
+7. Assigned freight200: project delta120, resulting1500. Unassigned G/L freight does not transfer.
+8. Exact-cost return10 @25: project delta-250. Later cost changes reconcile both issue and return once.
+9. Partial supplier/technical invoices, late zero-quantity costs and deleted order remain reconcilable.
+10. Delayed inventory G/L posting leaves prior allocation intact; posting completes then source recovers.
+    Aggregated G/L evidence must block, never allocate an invented ratio.
+11. Repeated and concurrent workers post one net delta. Concurrent valuation cannot lose a cost change.
+12. Inject Error after PostBatch.Run in a disposable test build: journal, project entry, register and balance
+    all roll back. Retry the normal build and prove exactly one successful transfer.
+13. Closed period/project and invalid dimensions block visibly. Correct only through authorized setup.
+14. Test warehouse posting, serial/lot splits, undo shipment and returns. Block any unsupported source chain.
+15. No duplicate budget/billable planning line is created by journal usage. Reconcile G/L, project and WIP.
+16. Verify permissions, disable/re-enable, mapping-reset recovery and operational logging before approval.

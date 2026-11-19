@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "Application",
+      "path": "app"
+    },
+    {
+      "name": "Tests",
+      "path": "tests"
+    }
+  ],
+  "settings": {
+    "al.enableCodeAnalysis": true
+  }
+}

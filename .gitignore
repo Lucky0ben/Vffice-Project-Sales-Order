@@ -1,0 +1,6 @@
+.alpackages/
+.vscode/.alcache/
+*.app
+*.zip
+.credentials/
+artifacts/

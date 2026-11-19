@@ -1,0 +1,44 @@
+@base = https://api.businesscentral.dynamics.com/v2.0/YOUR_TENANT/YOUR_SANDBOX/api/vffice/projectMaterials/v1.0
+@company = YOUR_COMPANY_GUID
+@token = REPLACE_LOCALLY
+@budgetRecordId = RECORD_SYSTEM_ID_FROM_POST
+@etag = ETAG_FROM_GET
+
+### Create budget and standard planning line atomically.
+POST {{base}}/companies({{company}})/materialBudgets
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "externalId": "d288abca-8545-4798-bf6d-7702860e0cce",
+  "projectNumber": "P100",
+  "taskNumber": "1000",
+  "itemNumber": "ITEM100",
+  "unitOfMeasureCode": "PCS",
+  "quantity": 1000,
+  "unitCostLCY": 20,
+  "revision": 1,
+  "planningDate": "2026-11-19",
+  "inactive": false,
+  "description": "Approved material budget"
+}
+
+### Look up before POST; duplicate externalId is rejected.
+GET {{base}}/companies({{company}})/materialBudgets?$filter=externalId eq d288abca-8545-4798-bf6d-7702860e0cce
+Authorization: Bearer {{token}}
+
+### Revise using the returned ETag.
+PATCH {{base}}/companies({{company}})/materialBudgets({{budgetRecordId}})
+Authorization: Bearer {{token}}
+Content-Type: application/json
+If-Match: {{etag}}
+
+{"quantity": 1100, "revision": 2}
+
+### Standard planning-line view.
+GET {{base}}/companies({{company}})/materialPlanningLines?$filter=projectNumber eq 'P100'
+Authorization: Bearer {{token}}
+
+### Cost reconciliation view.
+GET {{base}}/companies({{company}})/projectMaterialCosts?$filter=projectNumber eq 'P100'
+Authorization: Bearer {{token}}

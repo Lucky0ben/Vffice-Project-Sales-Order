@@ -1,0 +1,14 @@
+pageextension 71003 "VPM Return Order Lines" extends "Sales Return Order Subform"
+{
+    layout
+    {
+        addlast(Control1)
+        {
+            field("VPM Project Material"; Rec."VPM Project Material") { ApplicationArea = All; }
+            field("VPM Project No."; Rec."VPM Project No.") { ApplicationArea = All; }
+            field("VPM Task No."; Rec."VPM Task No.") { ApplicationArea = All; }
+            field("VPM Budget Id"; Rec."VPM Budget Id") { ApplicationArea = All; }
+            field("VPM Source Line Id"; Rec."VPM Source Line Id") { ApplicationArea = All; }
+        }
+    }
+}

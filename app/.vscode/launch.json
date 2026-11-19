@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "BC sandbox - set environmentName",
+      "type": "al",
+      "request": "launch",
+      "environmentType": "Sandbox",
+      "environmentName": "REPLACE_WITH_SANDBOX_NAME",
+      "startupObjectType": "Page",
+      "startupObjectId": 71000,
+      "breakOnError": "All",
+      "launchBrowser": true,
+      "schemaUpdateMode": "Synchronize"
+    }
+  ]
+}
